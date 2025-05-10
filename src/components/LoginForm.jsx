@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { Eye, EyeOff } from "lucide-react";
@@ -38,6 +36,7 @@ const LoginForm = ({ onLogin }) => {
           </label>
           <input
             id="username"
+            autoComplete="username"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -59,6 +58,7 @@ const LoginForm = ({ onLogin }) => {
               id="password"
               type={showPassword ? "text" : "password"}
               value={password}
+              autoComplete="current-password"
               onChange={(e) => setPassword(e.target.value)}
               className="w-full pr-10 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
               placeholder="Enter your password"

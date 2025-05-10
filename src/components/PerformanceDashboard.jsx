@@ -4,7 +4,6 @@ import AchievementsSection from "./sections/AchievementsSection";
 import PaperPresentationsSection from "./sections/PaperPresentationsSection";
 
 const PerformanceDashboard = ({ data }) => {
-  console.log("PerformanceDashboard data:", data);
   return (
     <div className="space-y-6 animate-fadeIn">
       <div className="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden">

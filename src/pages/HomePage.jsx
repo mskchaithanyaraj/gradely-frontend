@@ -1,13 +1,9 @@
-"use client";
-
 import { useState } from "react";
 import LoginForm from "../components/LoginForm";
 import PerformanceDashboard from "../components/PerformanceDashboard";
 import { parseStudentData } from "../utils/htmlParser";
 import Loader from "../components/ui/Loader";
 import InternalMarksCalculator from "../components/InternalMarksCalculator";
-import dotenv from "dotenv";
-dotenv.config();
 
 const HomePage = () => {
   const [data, setData] = useState(null);
@@ -21,20 +17,16 @@ const HomePage = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(
-        `${import.meta.env.REACT_APP_BACKEND_URL}/api/login`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username, password }),
-        }
-      );
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
 
       const json = await res.json();
 
       if (json.status === "success" && json.tableHTML) {
         const parsedData = parseStudentData(json.tableHTML);
-        console.log("Parsed Data:", parsedData);
         setData(parsedData);
       } else {
         setError(json.message || "Failed to fetch data");
