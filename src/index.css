@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* public/styles/student.css */
+.cellBorder {
+  @apply border border-gray-300 p-2 text-sm text-gray-700;
+}
+.headcellBorder {
+  @apply border border-gray-400 p-2 font-bold bg-gray-100 text-sm;
+}
+.reportHeading2 {
+  @apply font-bold text-base py-2 text-left text-blue-700;
+}
+.reportHeading2WithBackground {
+  @apply bg-blue-100 font-semibold p-2 text-sm text-gray-800;
+}
+
+/* Custom scrollbar styles */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 8px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* For Firefox */
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
