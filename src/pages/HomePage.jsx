@@ -10,6 +10,8 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  console.log(`${import.meta.env.VITE_BACKEND_URL}/api/login`);
+
   const handleLogin = async (username, password) => {
     // Reset any previous data and errors first
     setData(null);
